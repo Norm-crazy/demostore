@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome- Store</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles/store.css">
+		<link rel="stylesheet" type="text/css" href="styles/media.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+			  apiKey: "AIzaSyCAyZXiVWk19aFbbcxDsAPumaZbvnpf2_c",
+			  authDomain: "fir-store-d237a.firebaseapp.com",
+			  databaseURL: "https://fir-store-d237a.firebaseio.com",
+			  projectId: "fir-store-d237a",
+			  storageBucket: "fir-store-d237a.appspot.com",
+			  messagingSenderId: "92403227790"
+				};
+			firebase.initializeApp(config);
+			// Get a reference to the database service
+ 			var database = firebase.database();
+		</script>
+		<script src="scripts/store.js"></script>
+	</head>
+	<body>
+    <h1 class="site-title" align="center">Store of games</h1>
+      <div class="topnav">
+  	      <a href="index.html">Home</a>
+  	      <a href="About.html">About</a>
+          <a href="Start.html">Start</a>
+          <a class="active" href="store.html">Store</a>
+					<a href="#" class="toggle-button btn btn-info pull-right location-cart" id="button-cart">
+				  	<span class="glyphicon glyphicon-shopping-cart make-white"></span>&nbsp;Shopping Cart&nbsp;<span id="total-item-count"></span>
+					</a>
+					<div id="thankyoupage">
+						<a href="thank_you.html"></a>
+					</div>
+			</div>
+			<!--Shopping cart window-->
+			<div class="cart-window">
+					<h4 class="cart-title lg-media-title"  align="left" id="cart-title">Shopping Cart</h4>
+					<div class="cart-body">
+						<span class="cart-heading">Items:</span>
+						<br>
+						<p class="cart-items" id="cart-input-item-ff8"></p>
+						<p class="cart-items" id="cart-input-item-mgs"></p>
+						<p class="cart-items" id="cart-input-item-mgs4"></p>
+						<p class="cart-items" id="cart-input-item-halo"></p>
+						<p class="cart-items" id="cart-input-item-gow"></p>
+						<p class="cart-items" id="cart-input-item-dr3"></p>
+						<span class="cart-heading" id="cart-sub">Subtotal:</span><span id="cart-input-sub"></span>
+						<br>
+						<span class="cart-heading" id="cart-tax">Tax:</span><span id="cart-input-tax"></span>
+						<br>
+						<span class="cart-heading" id="cart-total">Total:</span><span id="cart-input-total"></span>
+					</div>
+					<br>
+				<div  id="cart-foot">
+					<div class="cell example example3">
+		        <form id='payment-form'>
+							<br>
+		          <div class="fieldset">
+		            <input id="example3-name" class="field" type="text" placeholder="Name" required=true>
+		            <input id="example3-email" class="field" type="email" placeholder="Email" required=true>
+		          </div>
+		          <div class="fieldset" id="ccform">
+		            <input id="example3-card-number" class="field" type="tel" placeholder="Fake Card Number" pattern="[0-9]{13,16}" maxlength="16" required=true></input>
+								<input id="example3-card-expiry" class="field" type="text" placeholder="Fake Card Expiry" maxlength="04" required=true></input>
+								<input id="example3-card-cvc" class="field half-width" type="text" placeholder="CVC" pattern="[0-9]{3,4}" maxlength="4" required=true></input>
+								<input id="example3-zip" class="field half-width" placeholder="94107" maxlength="5" required=true>
+								<div class="error" role="alert">
+									<span class="message"></span>
+								</div>
+							</div>
+		          <button type="submit" id="create-order" data-tid="elements_examples.form.pay_button">Submit Payment</button>
+							<br>
+		        </form>
+      		</div>
+				</div>
+			</div>
+      <h3 class="text">This page will be a demo store page. The store items are going to be some of my favorite games.</h3>
+      <div class="container">
+        <div>
+			<!--PS Games-->
+					<img class="Console-names" id="store-logo" align="center" src="img/store/PlayStation_store_logo.png">
+					<div class="row">
+			<!--FF8 Modal-->
+							<div class="col-xs-4 text-center">
+								<a href data-toggle="modal" data-target="#FF8-Modal"><img class="store-imgs" src="img/store/Final-Fantasy-8.jpg"></a>
+			<!--FF8 Modal -->
+								<div class="modal fade" id="FF8-Modal" role="dialog">
+									<div class="modal-dialog">
+			<!-- Modal content-->
+										<div class="modal-content">
+												<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title lg-media-title" align="left" id="FF8-title">Final Fantasy VIII</h4>
+											</div>
+			<!--FF8  Modal Body-->
+											<div class="modal-body" id="ps4-background-modal">
+												<div class="row">
+													<img class="col-xs-6 text-center" id="test-ff8" src="img/store/FF8-modal-bg.jpg">
+														<p class="col-xs-6 text-center lg-media-info" id="FF8-info">Final Fantasy VIII is a role-playing video game developed and published by Square for the PlayStation console. Released in 1999, it is the eighth main installment in the Final Fantasy series.<br>Final Fantasy VIII is set in a time of war, It is a time of war. Galbadia, a Global Superpower, has declared war on the country of Dollet.  As a sorceress manipulates the most powerful men in Galbadia. Squall learns that the sorceress's name is Edea, who has been behind Galbadia's recent hostilities. Under orders from Balamb and Galbadia Gardens, Squall and his comrades attempt to defeat Edea.
+														After defeating Edea, the group learns that Edea was under the control of Ultimecia, a powerful sorceress from the future. <br> Final Fantasy VIII uses a turn-based battle system, between the playable characters and CPU-controlled enemies.Final Fantasy VIII has 6 playable characters, Squall Leonhart, Rinoa Heartilly, Quistis Trepe, Zell Dincht, Selphie Tilmitt,  and Irvine Kinneas. The summoning-creatures in Final Fantasy VIII are called Guardian Force (GF), assigning ("junctioning") GF to playable characters will allow that character the ability to summon that GF.
+													</p><span>
+													<a href="http://www.ffviiipc.com/en"><button class="official-sites" id="ff8-site" type="button">Official Site</button></a>
+													<a href="http://store.steampowered.com/app/39150/FINAL_FANTASY_VIII/"><img id="ff8-steam" src="img/store/steam.png"></a></span>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" id="closeff8" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+			<!--End of modal FF8-->
+									<div class="FF8-under">
+										<h4 class="undertex-LG-media">Final Fantasy 8<h4>
+										<p class="undertex-LG-media" id="ff8-storeun">Not Available on the PlayStation store.</p>
+									</div>
+							</div>
+			<!--Metal Gear Modal-->
+							<div class="col-xs-4 text-center">
+								<a  href data-toggle="modal" data-target="#MGS-Modal"><img class="store-img-mgs" src="img/store/metal-gear-solid-game.png"></a>
+									<div class="modal fade" id="MGS-Modal" role="dialog">
+										<div class="modal-dialog">
+			<!--MGS Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title lg-media-title" align="left" id="MGS-title">METAL GEAR SOLID</h4>
+											</div>
+			<!--MGS Modal Body-->
+											<div class="modal-body" id="ps4-background-modal">
+												<div class="row">
+													<img class="col-xs-6 text-center" id="MGS-img-modal" src="img/store/mgs-modal.jpg">
+														<p class="col-xs-6 text-center" id="MGS-info">Metal Gear Solid is an action-adventure stealth video game produced by Konami Computer Entertainment Japan and released for the PlayStation in 1998. <br> The protagonist is Solid Snake, a legendary infiltrator, and saboteur. During the mission, Snake receives support and advice via codec radio. Colonel Roy Campbell, Solid Snake's former commanding officer, supports Snake with advice and tactics. Snake, is joined by Naomi Hunter, who gives medical advice; Natasha Romanenko, who provides item and weapon tips; Master Miller, a former drill instructor and survival coach; and Mei Ling, who invented the soliton radar system used in the mission and is also in charge of mission data; the player can call her to save the game.
+														<br>
+														Other characters include Meryl Silverburgh, Colonel Campbell's niece and a rookie soldier stationed in Shadow Moses who did not join the revolt; Dr. Hal Emmerich, the lead developer of Metal Gear REX; and the "Ninja", a mysterious cybernetically enhanced agent who is neither an ally nor an enemy of Snake but does oppose FOXHOUND.
+														<br>
+														Metal Gear Solid follows Solid Snake, a soldier who infiltrates a nuclear weapons facility to neutralize the terrorist threat from FOXHOUND, a renegade special forces unit. Snake must liberate two hostages, the DARPA Chief Donald Anderson and the president Kenneth Baker of a major arms manufacturer, confront the terrorists, and stop them from launching a nuclear strike.  Snake learns that FOXHOUND threatens to use a nuclear-capable mecha called Metal Gear REX, against the U.S. government if they do not receive the remains of Big Boss and the ransom of $1 billion within 24 hours.
+														Snake teams up with  Dr. Hal Emmerich, the lead developer of Metal Gear REX, to stop FOXHOUND from launching REX.
+														</p>
+														<img class="MGS-codec" src="img/store/MGS-Codec1.jpg">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" id="closeMGS4" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<h4 class="undertex-LG-media" id="MGSunder">Metal Gear Solid.<br>
+									Not available as digital download.
+								</h4>
+							</div>
+			<!--MGS4 Modal-->
+						<div class="col-xs-4 text-center">
+							<a  href data-toggle="modal" data-target="#MGS4-Modal"><img class="store-imgs-mgs4" src="img/store/MGS4.jpg"></a>
+								<div class="modal fade" id="MGS4-Modal" role="dialog">
+									<div class="modal-dialog">
+				<!-- Modal content-->
+										<div class="modal-content">
+												<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title lg-media-title" align="left" id="MGS4-title">METAL GEAR SOLID4: GUNS OF THE PATRIOTS</h4>
+											</div>
+				<!--MGS4 Modal body-->
+											<div class="modal-body" id="ps4-background-modal">
+												<div class="row">
+													<img class="col-xs-6 text-center" id="MGS4-img-modal" src="img/store/MGS4-modal.jpg">
+														<p class="col-xs-6 text-center" id="MGS4-info">Metal Gear Solid 4: Guns of the Patriots is an action-adventure stealth video game developed by Kojima Productions and published by Konami exclusively for the PlayStation 3 console. It is the sixth Metal Gear game directed by Hideo Kojima and was released worldwide on June 12, 2008. <br>
+															Metal Gear Solid 4: Guns of the Patriots is set in a battle-scarred future where huge conglomerates fight for supremacy using armies of hand-picked mercenaries. Set five years after the events of Metal Gear Solid 2: Sons of Liberty, the story centers around a prematurely aged Solid Snake, now known as Old Snake.<br>
+															This devastated world is seen through the battle-weary eyes of an older Solid Snake who has been charged with infiltrating a number of key locations across the globe, including the Middle East, South America, and Eastern Europe. As such, the epic end to Snake’s story offers ground-breaking combat elements, a refined control system that offers unprecedented control over the aged hero, and the tying up of key plot lines and loose ends.</p>
+														<span>
+															<a href="https://store.playstation.com/en-us/product/UP0101-NPUB31633_00-MGS4MAINGAME0000"><img id="MGS4-PS-store" src="img/store/PS-store.png"></a>
+															<a href="http://www.konami.jp/mgs4/us/top.html"><button class="official-sites" id="mgs4-site" type="button">Official Site</button></a>
+														</span>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" id="closeMGS4" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+				<!--End of MGS4 Modal-->
+								<div class="MGS4-under">
+									<h4 class="undertex-LG-media">Metal Gear Solid 4<h4>
+									<p class="undertex-LG-media">Only available one the PlayStation 3.</p>
+								</div>
+							</div>
+				<!--End of MGS4 details-->
+					</div>
+					<div class="row">
+						<div class="col-xs-4 text-center">
+							<button type="button" class="add-cart" id="ff8-cart">Add to Cart</button>
+						</div>
+						<div class="col-xs-4 text-center">
+							<button type="button" class="add-cart" id="MGS-cart">Add to Cart</button>
+						</div>
+						<div class="col-xs-4 text-center">
+							<button type="button" class="add-cart" id="MGS4-cart">Add to Cart</button>
+						</div>
+					</div>
+					</br>
+					<hr>
+					<div class="row">
+			<!--Xbox Games-->
+					<img class="Xbox-store" src="img/store/xbox-store-logo.png">
+							<div class="col-xs-4 text-center">
+			<!--Halo Modal -->
+								<a href data-toggle="modal" data-target="#halo-Modal"><img class="Xb-store-imgs" src="img/store/Halo-store-item.png"></a>
+								<div class="modal fade" id="halo-Modal" role="dialog">
+									<div class="modal-dialog">
+			<!--Halo Modal content-->
+										<div class="modal-content">
+												<div class="modal-header" id="xbox-header">
+												<button type="button" class="close" id="xbox-close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title lg-media-title" align="left" id="halo-title">HALO: COMBAT EVOLVED</h4>
+											</div>
+			<!--Halo Modal Body-->
+											<div class="modal-body" id="xbox-body">
+												<div class="row">
+													<img class="col-xs-6 text-center" id="halo-modal-img" src="img/store/Halo-modal-bg.jpg">
+														<p class="col-xs-6 text-center lg-media-info" id="halo-info">Halo: Combat Evolved is a first-person shooter video game, developed by Bungie and published by Microsoft Game Studios.  Halo: Combat Evolved is the first game of the Halo franchise, it was released as a launch title for the Xbox gaming system on November 15, 2001.<br>
+															Halo: Combat Evolved takes place in a science fiction universe, onboard the UNSC Pillar of Autumn a Halcyon-class light cruiser in the UNSC Navy. UNSC Spartan soldier known as the Master Chief awakes from cryo-sleep to the Pillar of Autumn being attacked by the Covenant. Master Chief is partnered with the Cortana (artificial intelligence construct). Master Chief and Cortana fight the Covenant and a parasitic alien race called the Flood, to stop Halo from being activated. There are multiple Halo rings, and once they are connected and act together as a weapon of last resort; when fired, the rings kill any sentient life capable of falling prey to the Flood.</p>
+														<span>
+															<a href="https://www.halowaypoint.com/en-us/games/halo-combat-evolved"><button class="official-sites" id="halo-site" type="button">Official Site</button></a>
+															<a href="http://marketplace.xbox.com/en-US/Product/Halo-Combat-Evolved/66acd000-77fe-1000-9115-d8024d53084c?DownloadType=Game#LiveZone"><img id="halo-store" src="img/store/xbox-store1.jpg"></a>
+														</span>
+												</div>
+											</div>
+											<div class="modal-footer" id="xbox-footer">
+												<button type="button" id="" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div class="halo-under">
+								<h4 class="undertex-LG-media">Halo: Combat Evolved<h4>
+							</div>
+						 </div>
+			<!--End of Halo Modal-->
+							<div class="col-xs-4 text-center">
+			<!--Gears Modal -->
+								<a href data-toggle="modal" data-target="#Gears-Modal"><img class="gow-store-img" src="img/store/gow-store-img1.jpg"></a>
+								<div class="modal fade" id="Gears-Modal" role="dialog">
+									<div class="modal-dialog">
+			<!--Gears Modal content-->
+										<div class="modal-content">
+												<div class="modal-header" id="xbox-header">
+												<button type="button" class="close" id="xbox-close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title lg-media-title" align="left" id="Gears-title">Gears of War</h4>
+											</div>
+			<!--Gears Modal Body-->
+											<div class="modal-body" id="xbox-body">
+												<div class="row">
+													<img class="col-xs-6 text-center" id="gears-modal-img" src="img/store/gears-modal-bg.jpg">
+														<p class="col-xs-6 text-center lg-media-info" id="gears-info">Gears of War is the first installment of the Gears of War franchise, that was released on November 7, 2006, for the Xbox 360. The Gears of War series takes place on a fictional Earth-like planet named Sera. The franchise focuses on the conflict between humanity, the subterranean reptilian hominids known as the Locust Horde, and their mutated counterparts, the Lambent & the Swarm. <br>
+														Gears of War follows protagonist Marcus Fenix, and the troops of Delta Squad as they wield a desperate, last-ditch attempt to save the remaining human inhabitants of the Sera. Delta Squad discovers large underground cavern which the Locust inhabit. Delta needs to map the tunnel network, in order to detonate a Lightmass Bomb, that will destroy the Locust.
+														</p>
+														<span>
+															<a href="https://gearsofwar.com/en-us/games/gears-of-war/xbox-360"><button class="official-sites" id="halo-site" type="button">Official Site</button></a>
+															<a href="http://marketplace.xbox.com/en-us/Product/Gears-of-War/66acd000-77fe-1000-9115-d8024d5307d5?cid=search"><img id="halo-store" src="img/store/xbox-store1.jpg"></a>
+														</span>
+												</div>
+											</div>
+											<div class="modal-footer" id="xbox-footer">
+												<button type="button" id="" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div class="gears-under">
+								<h4 class="undertex-LG-media">Gears of War<h4>
+							</div>
+						 </div>
+				<!--End of Gears Modal-->
+					 <div class="col-xs-4 text-center">
+				<!--Dead Modal -->
+						<a href data-toggle="modal" data-target="#dead-Modal"><img class="dead-store-img" src="img/store/dead.png"></a>
+						<div class="modal fade" id="dead-Modal" role="dialog">
+							<div class="modal-dialog">
+				<!--Dead Modal content-->
+								<div class="modal-content">
+										<div class="modal-header" id="xbox-header">
+										<button type="button" class="close" id="xbox-close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title lg-media-title" align="left" id="dead-title">Dead Rising 3</h4>
+									</div>
+				<!--Dead Modal Body-->
+									<div class="modal-body" id="xbox-body">
+										<div class="row">
+											<img class="col-xs-6 text-center" id="dead-modal-img" src="img/store/dead-modal-bg.jpg">
+												<p class="col-xs-6 text-center lg-media-info" id="dead-info">Dead Rising 3 is an open-world survival horror beat 'em up video game, that was developed by Capcom Vancouver and published by Microsoft Studios. Dead Rising 3 was released as a launch title for the Xbox One platform on November 22, 2013.<br><br>
+													Dead Rising 3 marks the return of one of the most popular zombie video game franchises. Set 10 years after the events of Fortune City in Dead Rising 2, players are introduced to Nick Ramos, a young mechanic with a strange tattoo and a mysterious past, who must find a way to escape a city full of zombies before an impending military strike wipes the city of Los Perdidos, California, and everyone in it, off the map. Nick can’t do it alone – he must join up with other survivors to stay alive. They must fight their way out before it’s too late.<br><br>
+													With an immersive open-world experience, intense action, and unmatched level of weapon and character customization, a new generation of zombie-slaying fun has arrived with Dead Rising 3.
+												</p>
+												<span>
+													<a href="https://deadrising.com/dead-rising-3/?age-verified=f7d212bd08"><button class="official-sites" id="halo-site" type="button">Official Site</button></a>
+													<a href="https://www.microsoft.com/en-us/store/p/dead-rising-3-apocalypse-edition/c3mpws9w61s7?rtc=1"><img id="halo-store" src="img/store/xbox-store1.jpg"></a>
+												</span>
+										</div>
+									</div>
+									<div class="modal-footer" id="xbox-footer">
+										<button type="button" id="" class="btn btn-default lg-media-close" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					  <div class="dead-under">
+						 <h4 class="undertex-LG-media">Dead Rising 3<h4>
+					 </div>
+					</div>
+				<!--End of Dead Modal-->
+				 </div>
+				 <div class="row">
+					 <div class="col-xs-4 text-center">
+						 <button type="button" class="add-cart" id="halo-cart">Add to Cart</button>
+					 </div>
+					 <div class="col-xs-4 text-center">
+						 <button type="button" class="add-cart" id="gears-cart">Add to Cart</button>
+					 </div>
+					 <div class="col-xs-4 text-center">
+						 <button type="button" class="add-cart" id="dr3-cart">Add to Cart</button>
+					 </div>
+				 </div>
+				 <br>
+			</div>
+			<br>
+		</div>
+		<br>
+	</body>
+</html>

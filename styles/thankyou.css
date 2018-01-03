@@ -1,0 +1,27 @@
+#greeting{
+  font-size: 18px;
+}
+
+#text{
+  font-size: 15px;
+}
+
+#thanksbody{
+  background-color: silver;
+}
+
+.gif {
+  width: 300px;
+}
+
+#androidgif{
+  position: relative;
+  right: -82px;
+  top: -20px;
+}
+
+#receipt-text{
+  width: 62%;
+  position: relative;
+  text-align: left;
+}

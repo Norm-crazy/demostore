@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Thank you</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles/store.css">
+		<link rel="stylesheet" type="text/css" href="styles/thankyou.css">
+		<link rel="stylesheet" type="text/css" href="styles/media.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="scripts/thanks.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+			  apiKey: "AIzaSyCAyZXiVWk19aFbbcxDsAPumaZbvnpf2_c",
+			  authDomain: "fir-store-d237a.firebaseapp.com",
+			  databaseURL: "https://fir-store-d237a.firebaseio.com",
+			  projectId: "fir-store-d237a",
+			  storageBucket: "fir-store-d237a.appspot.com",
+			  messagingSenderId: "92403227790"
+				};
+			firebase.initializeApp(config);
+			// Get a reference to the database service
+ 			var database = firebase.database();
+		</script>
+	</head>
+	<body>
+    <br>
+      <div class="topnav">
+  	      <a href="index.html">Home</a>
+  	      <a href="About.html">About</a>
+          <a href="Start.html">Start</a>
+          <a href="store.html">Store</a>
+			</div>
+      <br>
+      <br>
+      <div class="container" id="thanksbody">
+		  	<h1 class="text-center">Thank you for your purchase!</h1>
+		  	<div class="row">
+					<div class="col-xs-6 text-center" id="receipt-text">
+					  <p id="greeting">Hello <span id="name"></span>.</p>
+		        <p id="text">Thank you again for your purchase, we will send a copy of the receipt to <span id="email"></span>.</p>
+		        <p id="text">Order ID: <span id="orderid"></span></p>
+		        <p id="text">Items: <span id="items"></span></p>
+		        <p id="text">Subtotal: <span id="subtotal"></span></p>
+		        <p id="text">Tax: <span id="tax"></span></p>
+		        <p id="text">Total: <span id="total"></span></p>
+		        <p id="text">If you have any questions, feel free to contact us at 555-555-5555 or at our email address: this@is.test</p>
+					</div>
+					<div class="col-xs-6 text-center" id="androidgif">
+						<img class="gif" src="img/thankyou.gif">
+					</div>
+				</div>
+      </div>
+	</body>
+</html>
