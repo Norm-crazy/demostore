@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Welcome- Home</title>
+            <meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+						<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+						<script>
+							// Initialize Firebase
+							var config = {
+							  apiKey: "AIzaSyCAyZXiVWk19aFbbcxDsAPumaZbvnpf2_c",
+							  authDomain: "fir-store-d237a.firebaseapp.com",
+							  databaseURL: "https://fir-store-d237a.firebaseio.com",
+							  projectId: "fir-store-d237a",
+							  storageBucket: "fir-store-d237a.appspot.com",
+							  messagingSenderId: "92403227790"
+								};
+							firebase.initializeApp(config);
+							// Get a reference to the database service
+				 			var database = firebase.database();
+						</script>
+	</head>
+	<body class="grad1">
+        <div class="container text-center">
+            <h1 class="a">Welcome!</h1>
+        </div>
+        <nav class="navbar navbar-left" id="navbar">
+					<div class="nav">
+							<a href="index.html"><img class="home-button" src="img/gray-home-thin-button-hi.png"></a></li>
+							<a href="About.html"><img class="about-button" src="img/About%20Button.png"></a></li>
+							<a href="Start.html"><img class="demo-button" src="img/start.png"></a></li>
+							<a href="store.html"><img class="shop-button" src="img/cart.png"></a></li>
+							<a href="https://www.linkedin.com/in/norman-higgs-28845896"><img class="link-button" src="https://pbs.twimg.com/profile_images/614583061448036352/CBpFkPaz.png"></a></li>
+					</div>
+        </nav>
+        <div class="main-container">
+            <p class="b">Hi, my name is Norman. I am looking into being a Web Developer. This site is a demonstration of the skills that I have learned during my courses of  HTML, CSS, and JavaScript. I hope you enjoy my site as much as I enjoyed creating this site.
+            <br>
+            Hit the like button:<button class="btn-md btn-success like-button" id='likes_test_button'><a class="like-count" style="font-size: 18px">Likes:</a></button></p>
+            <p class="explain-like">(The like button is a demonstration of how I was able to create a button that tracks the number of times it was clicked. I am using Firebase to store the data of the number of clicks. )</p>
+        </div>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

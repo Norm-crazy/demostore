@@ -1,0 +1,451 @@
+.topnav {
+  overflow: hidden;
+  background-color: whitesmoke;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.topnav a {
+  float: left;
+  display:  block;
+  color: black;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.make-white{
+  color: white;
+}
+.location-cart{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+  margin-right: 5px !important;
+  margin-top: 8px !important;
+}
+body {
+  background-color: LightSlateGrey;
+}
+
+.text{
+  margin-left: 10px;
+}
+
+.container{
+  border-style: none;
+  background-color: silver;
+}
+
+h4 {
+  margin-left: 15%;
+}
+/*Shopping Cart Modal*/
+.cart-window {
+  position: absolute;
+  right: 90px;
+  width: 230px;
+  top: 125px;
+  border: solid;
+  background-color: LightSlateGrey;
+  border-radius: 25px;
+  z-index: 1;
+  padding-bottom: 15px;
+  display: none;
+}
+.cart-title{
+  margin-left: auto;
+  margin-right: auto;
+  width: 116px;
+}
+.cart-body{
+  background-color: silver;
+}
+#cart-foot{
+  margin-left: auto;
+  margin-right: auto;
+  width: 215px;
+}
+.cart-heading{
+  margin-left: 5px;
+}
+.cart-items {
+  margin-left: 15px;
+}
+
+/*Store images*/
+#store-logo{
+  width: 40%;
+  margin: auto;
+  display: block;
+  padding-bottom: 2%;
+}
+.Xbox-store{
+  width: 25%;
+  margin: auto;
+  display: block;
+  padding-bottom: 2%;
+}
+.Xb-store-imgs{
+  width: 60%;
+}
+.store-imgs {
+  width: 70%;
+  height: 75%;
+}
+
+.store-imgs-mgs4{
+  width: 58%;
+  margin-top: -1%;
+}
+
+.store-img-mgs {
+    width: 72%;
+    margin-top: -1%;
+}
+
+/*PS Modal CSS*/
+.modal-header{
+  background-color: black;
+}
+
+.modal-dialog {
+  width: 80%;
+}
+
+.modal-content{
+  background: DimGray;
+}
+
+.close{
+  color: white;
+}
+
+.col-xs-6 {
+    width: 35%;
+}
+.modal-footer{
+    background-color: black;
+}
+#ps4-background-modal{
+  background-image: radial-gradient(ellipse 50% 70% at 50% 0,#307af5 20%,#011940);
+}
+/*FF8 Modal details*/
+#FF8-title{
+  color: white;
+}
+#FF8-info {
+  background-color: white;
+  height: 220px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#test-ff8 {
+  width:  60%;
+  margin-left: -00%;
+}
+#ff8-site {
+  position: absolute;
+  bottom: 8%;
+  right: 30%;
+}
+#ff8-steam {
+    height: 08%;
+    width: 14%;
+    position: absolute;
+    right: 15%;
+    bottom: 8%;
+}
+.FF8-under{ /*Text under FF8 Modal*/
+  margin-left: -20%;
+}
+/*Metal Gear Solid*/
+#MGS-title{
+  color: white;
+}
+#MGS-info{
+  background-color: white;
+  height: 220px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#MGS-img-modal {
+  width:  55%;
+  margin-left: -00%;
+}
+.MGS-codec{
+  width: 30%;
+  margin-right: 15%;
+  bottom: 20%
+  position: relative;
+}
+#MGSunder{
+  margin-left: -1%;
+}
+/*MGS4 Modal*/
+#MGS4-img-modal {
+  width:  60%;
+  margin-left: -00%;
+}
+#MGS4-title{
+  color: white;
+}
+#MGS4-info {
+  background-color: white;
+  height: 220px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#MGS4-PS-store{
+  max-width: 25%;
+  min-width: 15%;
+  position: relative;
+}
+#mgs4-site{
+  position: relative;
+}
+.MGS4-under{
+  margin-left: -20%;
+}
+
+/*Xbox Modal CSS*/
+#xbox-header {
+  background-color: #107c10;
+}
+#xbox-footer{
+  background-color: #107c10;
+}
+#xbox-body{
+  background: linear-gradient(#3a3a3a,#c2c2c2);
+}
+.xbox-close{
+    color: red;
+}
+/*Halo Modal*/
+#halo-title{
+  color: #f1f1f1;
+  font-family: Tahoma,Arial,sans-serif;
+}
+#halo-modal-img{
+  width:  60%;
+}
+#halo-info{
+  background-color: white;
+  height: 190px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#halo-site{
+  position: relative;
+}
+#halo-store{
+  position: relative;
+}
+.halo-under{
+  margin-left: -20%;
+}
+.gow-store-img{
+  width: 61%;
+}
+#Gears-title{
+  color: #f1f1f1;
+  font-family: Tahoma,Arial,sans-serif;
+}
+#gears-modal-img{
+  width:  60%;
+}
+#gears-info{
+  background-color: white;
+  height: 190px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.gears-under{
+  margin-left: -20%;
+}
+.dead-store-img{
+  width: 68%;
+}
+#dead-title{
+  color: #f1f1f1;
+  font-family: Tahoma,Arial,sans-serif;
+}
+#dead-modal-img{
+  width:  60%;
+}
+#dead-info{
+  background-color: white;
+  height: 190px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.dead-under{
+  margin-left: -20%;
+}
+/*End of Modals*/
+/*Cart system*/
+.add-cart{
+  background-color: gold;
+  border-color: goldenrod;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+  padding: 1px 6px 1px 5px;
+  color: darkslategray;
+  font-style: italic;
+  text-shadow: 2px 2px #afaad0;
+}
+.items-text{
+  margin-left: 20px;
+}
+/*Stripes github*/
+.example.example3 {
+  background-color: #525f7f;
+}
+
+.example.example3 * {
+  font-family: Quicksand, Open Sans, Segoe UI, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.example.example3 .fieldset {
+  margin: 0 15px 30px;
+  padding: 0;
+  border-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.example.example3 .field {
+  padding: 10px 20px 11px;
+  background-color: #7488aa;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.example.example3 .field.half-width {
+  width: calc(50% - (5px / 2));
+}
+
+.example.example3 .field.third-width {
+  width: calc(33% - (5px / 3));
+}
+
+.example.example3 .field + .field {
+  margin-top: 6px;
+}
+
+.example.example3 .field.focus,
+.example.example3 .field:focus {
+  color: #424770;
+  background-color: #f6f9fc;
+}
+
+.example.example3 .field.invalid {
+  background-color: #fa755a;
+}
+
+.example.example3 .field.invalid.focus {
+  background-color: #f6f9fc;
+}
+
+.example.example3 .field.focus::-webkit-input-placeholder,
+.example.example3 .field:focus::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example3 .field.focus::-moz-placeholder,
+.example.example3 .field:focus::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.example.example3 .field.focus:-ms-input-placeholder,
+.example.example3 .field:focus:-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example3 input, .example.example3 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+.example.example3 input {
+  color: #fff;
+}
+
+.example.example3 input::-webkit-input-placeholder {
+  color: #9bacc8;
+}
+
+.example.example3 input::-moz-placeholder {
+  color: #9bacc8;
+}
+
+.example.example3 input:-ms-input-placeholder {
+  color: #9bacc8;
+}
+
+.example.example3 button {
+  display: block;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 0 15px;
+  background-color: #fcd669;
+  border-radius: 20px;
+  color: #525f7f;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.example.example3 button:active {
+  background-color: #f5be58;
+}
+
+.example.example3 .error svg .base {
+  fill: #fa755a;
+}
+
+.example.example3 .error svg .glyph {
+  fill: #fff;
+}
+
+.example.example3 .error .message {
+  color: #fff;
+}
+
+.example.example3 .success .icon .border {
+  stroke: #fcd669;
+}
+
+.example.example3 .success .icon .checkmark {
+  stroke: #fff;
+}
+
+.example.example3 .success .title {
+  color: #fff;
+}
+
+.example.example3 .success .message {
+  color: #9cabc8;
+}
+
+.example.example3 .success .reset path {
+  fill: #fff;
