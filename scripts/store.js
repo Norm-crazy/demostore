@@ -69,6 +69,16 @@ function shoppingCart (){
 }
 
 $(document).ready(function() {
+  /*Shopping Cart*/
+  $('#button-cart').on('click', function(){
+    $('.cart-window').toggle();
+  });
+  $('#payment-form').submit(function(){
+    custName = $("#example3-name").val();
+    custEmail = $("#example3-email").val();
+    chargToken = "Ch_" + Math.random().toString(36).substr(2);
+    newOrder(custName, custEmail, chargToken);
+  });
   //Playstation
   $('#ff8-cart').on('click', function(){
     ff8Quantity += 1;
@@ -106,16 +116,6 @@ $(document).ready(function() {
     var dr3Price = itemList["Deadr3"]["Price"];
     dr3Subtotal  = dr3Quantity * dr3Price;
     shoppingCart();
-  });
-/*Shopping Cart*/
-  $('#button-cart').on('click', function(){
-    $('.cart-window').toggle();
-  });
-  $('#payment-form').submit(function(){
-    custName = $("#example3-name").val();
-    custEmail = $("#example3-email").val();
-    chargToken = "Ch_" + Math.random().toString(36).substr(2);
-    newOrder(custName, custEmail, chargToken);
   });
 
 //create order
